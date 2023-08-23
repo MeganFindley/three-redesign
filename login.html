@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Login Redesign</title>
+    <link rel="icon" type="image/png" media="(prefers-color-scheme: light)" sizes="32x32" href="imgs/favicon-light.png">
+    <link rel="icon" type="image/png" media="(prefers-color-scheme: dark)" sizes="32x32" href="imgs/favicon-dark.png">
+    <link rel="stylesheet" type="text/css" href="login.css" />
+    <!-- Jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <!-- ------------------------------------------------------ -->
+    <!-- Nav -->
+    <!-- ------------------------------------------------------ -->
+    <div class="nav">
+        <!-- Top level of nav -->
+        <table id="top-table">
+            <tbody>
+                <tr>
+                  <th class="no-select" id="three-logo-text">Three</th>
+                  <th id="account-btns">
+                    <span class="no-select btn" id="account-text">Sign in or Register</span>
+                  </th>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Lower level of nav -->
+        <table id="bottom-table">
+            <tbody>
+                <tr>
+                  <td id="nav-btns">
+                    <span class="no-select btn" id="store-btn">Store</span>
+                    <span class="no-select btn" id="help-support-btn">Help & Support</span>
+                    <span class="no-select btn" id="company-btn">Our Company</span>
+                    <span class="no-select btn" id="blog-btn">Blog</span>
+                  </th>
+                  <td id="search-section">
+                    <div class="input-container">
+                        <input class="input-text" type="text" id="search-input" placeholder="Search Three...">
+                        <img class="input-img btn" src="imgs/search.svg" id="search-input-img">
+                    </div>
+                  </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- ------------------------------------------------------ -->
+    <!-- Pages  -->
+    <!-- ------------------------------------------------------ -->
+    <!-- page section background -->
+    <div class="main-body"><div class="three-cover"></div></div>
+    <!-- Main login screen -->
+    <div class="page" id="login-container">
+        <table>
+            <tbody>
+                <tr>
+                    <!-- Login form -->
+                    <td id="login-form">
+                        <form>
+                            <h1>Sign in to Three</h1>
+                            <p>Sign in using your registered Three number or email address</p>
+                            <label id="username-label" for="username-input">Email or Three Number</label>
+                            <div class="icon-input-container">
+                                <input required class="input icon-input-text" id="username-input" type="text" placeholder="Three Number / Email">
+                                <img class="icon-input-img" src="imgs/at-sign.svg" id="username-input-img">
+                            </div>
+                            <label id="password-label" for="password-input">Password</label>
+                            <div class="icon-input-container">
+                                <input required class="input icon-input-text" id="password-input" type="password" placeholder="Password">
+                                <img class="icon-input-img btn" src="imgs/eye-off.svg" id="password-input-img">
+                            </div>
+                            <span id="forgot-btn" class="btn">Forgot your password?</span>
+                            <input class="input-button btn" id="login-btn" type="button" value="Login">
+                        </form>
+                    </td>
+                    <td id="line-break">
+                        <div></div>
+                        <span>or</span>
+                        <div></div>
+                    </td>
+                    <!-- Start of registration -->
+                    <td id="register-form">
+                        <form>
+                            <h1>Register now</h1>
+                            <h3>Tell us your phone number</h3>
+                            <p id="reg-p">We'll text you a code to make sure it's you. We'll also check that you don't already have an account set up.</p>
+                            <label for="tel-input"></label>
+                            <div class="icon-input-container">
+                                <input required id="tel-input" class="input icon-input-text" type="tel" placeholder="Three Number">
+                                <img class="icon-input-img" src="imgs/phone.svg" id="number-input-img">
+                            </div>
+                            <input class="input-button btn" id="register-btn" type="button" value="Send me the code">
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Forgot Password screen -->
+    <div class="page" id="forgot-screen">
+        <form></form>
+            <h1>Forgot your Three password?</h1>
+            <span id="return-text" class="return-to-login">Return to login</span>
+            <p>Enter your email address below, and we'll send you a link to reset your password.</p>
+            <p>If you need to register, click <span class="return-to-login">here</span></p>
+            <label id="forgot-email-label" for="forgot-email-input"></label>
+            <div class="icon-input-container">
+                <input required class="input icon-input-text" id="forgot-email-input" type="email" placeholder="Email">
+                <img class="icon-input-img" src="imgs/at-sign.svg" id="forgot-email-img">
+            </div>
+            <input class="input-button btn" id="forgot-submit-btn" type="button" value="Continue">
+        </form>
+    </div>
+    <!-- Continued registration -->
+    <div class="page" id="registration-form">
+        <form>
+            <h1>Check your messages</h1>
+            <span id="return-text" class="return-to-login"> Cancel and Return to login</span>
+            <p>We have sent a code to <span id="inputted-tel"></span>.</p>
+            <p>Never give one-time codes to fraudsters pretending to work for Three. To continue with your request enter your code which should arrive shortly.</p>
+            <p>Not the right number? <span class="input return-to-login">Try another number</span></p>
+            <label id="code-label" for="code-input">One-time Code</label>
+            <div class="icon-input-container">
+                <input required class="input icon-input-text" id="code-input" type="number" placeholder="Code">
+                <img class="icon-input-img" src="imgs/key.svg" id="code-input-img">
+            </div>
+            <input class="input-button btn" id="code-submit-btn" type="button" value="Continue">
+        </form>
+    </div>
+    <!-- Screen to display logged in status -->
+    <div class="page" id="logged-in-screen">
+        <h1>Your Account Page</h1>
+    </div>
+    <!-- ------------------------------------------------------ -->
+    <!-- Footer -->
+    <!-- ------------------------------------------------------ -->
+    <div class="footer">
+        <div id="footer-container">
+            <h3>Terms and policies</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <!-- Links to three website -->
+                        <td><a target="_blank" href="https://www.three.co.uk/terms-conditions">Terms</a></td>
+                        <td><a target="_blank" href="https://www.three.co.uk/terms-conditions/price-guides/latest-price-guides">Price guide</a></td>
+                        <td><a target="_blank" href="https://www.three.co.uk/privacy-safety">Privacy & Safety</a></td>
+                        <td><a target="_blank" href="https://www.three.co.uk/accessibility">Accessibiaty</a></td>
+                        <td><a target="_blank" href="https://www.three.co.uk/vulnerability">Vulnerable customer poacy</a></td>
+                        <td><a target="_blank" href="https://www.three.co.uk/terms-conditions/code-of-practice/code-of-practice">Codes of practise</a></td>
+                        <td><a target="_blank" href="https://www.three.co.uk/social-commitment/inclusion">Gender pay gap report</a></td>
+                        <td><a target="_blank" href="https://www.three.co.uk/terms-conditions/social-accountability/modernslaverystatement">Modern slavery statement</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Hutchison 3G UK Ltd | Registered address: 450 Longwater Avenue, Green Park, Reading, Berkshire, RG2 6GF | Registered in England & Wales | Registered company number: 03885486 | Authorised and regulated by the Financial Conduct Authority (registration number: 738979)</p>
+            <p>© Hutchison 3G UK Limited</p>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
